@@ -40,6 +40,13 @@ INSTALLED_APPS = [
     'booking',
 ]
 
+AUTH_USER_MODEL = 'booking.User'
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-micmic210-newramenapp-o3k8m4y5j4m.ws.codeinstitute-ide.net',
+    'http://127.0.0.1:8000',  #local development
+]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
