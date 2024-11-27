@@ -1,13 +1,18 @@
 from django.db import models
+from django.contrib.auth import get_user_model
+import random
+import string
 from django.contrib.auth.models import AbstractUser
 
+#  User Model
 class User(AbstractUser):
     phone = models.CharField(max_length=20, blank=True, null=True)
 
     def __str__(self):
         return self.username
 
-class Table (models.Model):
+# Table Model
+class Table(models.Model):
     table_number = models.PositiveIntegerField(unique=True, null=False)
     capacity = models.PositiveIntegerField(null=False)
     is_available = models.BooleanField(default=True)
@@ -16,7 +21,7 @@ class Table (models.Model):
     def __str__(self):
         return f"Table {self.table_number} (Capacity: {self.capacity})"
 
-
+# Reservation Model
 class Reservation(models.Model):
     STATUS_CHOICES = [
         ('confirmed', 'Confirmed'),
@@ -24,32 +29,27 @@ class Reservation(models.Model):
         ('pending', 'Pending'),
     ]
 
-    user = models.ForeignKey('User', on_delete=models.CASCADE, related_name="reservations")
-    tables = models.ManyToManyField('Table', related_name="reservations")  # Allows multiple tables per reservation
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="reservations")
+    table = models.ForeignKey(Table, on_delete=models.CASCADE, related_name="reservations", default=1)  
     reservation_date = models.DateField(null=False)
     reservation_time = models.TimeField(null=False)
     num_people = models.PositiveIntegerField(null=False)
     status = models.CharField(max_length=50, choices=STATUS_CHOICES, default='confirmed')
     created_at = models.DateTimeField(auto_now_add=True)
+    special_request = models.TextField(blank=True, null=True)
+
+    reservation_number = models.CharField(max_length=10, unique=True, editable=False)
+
+    def save(self, *args, **kwargs):
+        if not self.reservation_number:
+            self.reservation_number = ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
+            super().save(*args, **kwargs)
+
 
     def __str__(self):
         return f"Reservation {self.id} by {self.user.username} on {self.reservation_date} at {self.reservation_time}"
 
-    def clean (self):
-        """
-        Validation check for overlapping reservations for the same tables 
-        """
-        if self.tables.exists():
-            for table in self.tables.all():
-                overlapping_reservations = Reservation.objects.filter(
-                    tables=table,
-                    reservation_date=self.reservation_date,
-                    reservation_time=self.reservation_time,
-                    status='confirmed'
-                ).exclude(id=self.id)  # Exclude the current reservation when editing
-                if overlapping_reservations.exists():
-                    raise ValidationError(f"Table {table.table_number} is already reserved at this time.")
-
+# Admin Model    
 class Admin(models.Model):
     ROLE_CHOICES = [
         ('superadmin', 'Super Admin'),
@@ -66,7 +66,7 @@ class Admin(models.Model):
     def __str__(self):
         return f"{self.username} ({self.role})"
 
-
+# Menu Model
 class Menu(models.Model):
     name = models.CharField(max_length=100, null=False)
     description = models.TextField(blank=True, null=True)
@@ -78,7 +78,7 @@ class Menu(models.Model):
     def __str__(self):
         return self.name
 
-
+# Contact Message
 class ContactMessage(models.Model):
     name = models.CharField(max_length=100, null=False)
     email = models.EmailField(max_length=100, null=False)
