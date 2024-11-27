@@ -2,20 +2,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h2>Confirmation of Your Reservation</h2>
-  <p><strong>Reservation Number:</strong> {{ reservation.reservation_number }}</p>
-  <p><strong>Reservation Date:</strong> {{ reservation.reservation_date }}</p>
-  <p><strong>Reservation Time:</strong> {{ reservation.reservation_time }}</p>
-  <p><strong>Number of People:</strong> {{ reservation.num_people }}</p>
-  <p><strong>Special Request:</strong> {{ reservation.special_request }}</p>
+<h2>Confirmation of Your Reservation</h2>
+<p><strong>Reservation Number:</strong> {{ reservation.reservation_number }}</p>
+<p><strong>Reservation Date:</strong> {{ reservation.reservation_date }}</p>
+<p><strong>Reservation Time:</strong> {{ reservation.reservation_time }}</p>
+<p><strong>Number of People:</strong> {{ reservation.num_people }}</p>
+<p><strong>Special Request:</strong> {{ reservation.special_request }}</p>
 
-  <form action="{% url 'cancel_reservation' %}" method="POST">
-      {% csrf_token %}
-      <label for="reservation_number">Reservation Number:</label>
-      <input type="text" name="reservation_number" value="{{ reservation.reservation_number }}" readonly><br>
-      <label for="email">Email Address:</label>
-      <input type="email" name="email" value="{{ reservation.email }}" readonly><br>
-      <button type="submit">Cancel Reservation</button>
-  </form>
+
+
 {% endblock %}
-

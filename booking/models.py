@@ -30,6 +30,7 @@ class Reservation(models.Model):
     ]
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="reservations")
+    email = models.EmailField(blank=True, null=True)
     table = models.ForeignKey(Table, on_delete=models.CASCADE, related_name="reservations", default=1)  
     reservation_date = models.DateField(null=False)
     reservation_time = models.TimeField(null=False)
