@@ -12,46 +12,55 @@
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="80" tabindex="0">
-    <!-- Header -->
-    <header class="navbar navbar-expand-lg bg-white fixed-top">
-        <div class="container">
-            <a class="navbar-brand d-none d-md-block" href="#home">
-                <img src="{% static 'img/ramen-logo.png' %}" alt="Ramen Logo" width="80">
-            </a>
-            <a class="navbar-brand d-block d-md-none" href="#home">
-                <span class="fw-bold text-dark">Ramen Bar</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon">
-                </span>
-            </button>
-            <nav class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="menu.html">Menu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="reservation.html">Reservation</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </nav>
+
+    <main>
+        <!-- Header -->
+        <header class="navbar navbar-expand-lg bg-white fixed-top">
+            <div class="container">
+                <a class="navbar-brand d-none d-md-block" href="#home">
+                    <img src="{% static 'img/ramen-logo.png' %}" alt="Ramen Logo" width="80">
+                </a>
+                <a class="navbar-brand d-block d-md-none" href="#home">
+                    <span class="fw-bold text-dark">Ramen Bar</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon">
+                    </span>
+                </button>
+                <nav class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="philosophy.html">Philosophy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="menu.html">Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="reservation.html">Reservation</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!-- Common Header -->
+        <section id="common-header" class="d-flex align-items-center justify-content-center"
+            style="height: 50vh; background: url('{% static 'img/header-image.webp' %}') center / cover;">
+            <div class="position-absolute top-0 start-0 w-100"
+                style="height: 50vh; background-color: rgba(0, 0, 0, 0.5);"></div>
+        </section>
+
+        <div class="container mt-5">
+            {% block content %}
+            {% endblock %}
         </div>
-    </header>
 
-    <div class="container mt-5">
-        {% block content %}
-        {% endblock %}
-    </div>
-
+    </main>
     <!-- Footer -->
     <footer class="ftco-footer ftco-no-pb ftco-section bg-dark text-white py-5">
         <div class="container">

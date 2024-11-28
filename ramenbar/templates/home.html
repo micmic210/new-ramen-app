@@ -1,6 +1,404 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block content %}
-    <h2>Welcome to the Ramen Bar!</h2>
-    <p>This is the best place to enjoy authentic Japanese ramen.</p>
+
+<main>
+
+    <!-- Welcome Section: Centered -->
+    <section id="welcome-centered" class="d-flex align-items-center justify-content-center min-vh-100 position-relative text-white" style="background: url('{% static 'img/welcome.webp' %}') center / cover">
+        <!-- Dark Overlay -->
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+        <!-- Content -->
+        <div class="container text-center position-relative z-index-1">
+            <div style="margin-top: 50px">
+            </div>
+        </div>
+            <!-- Adjust margin to move content down -->
+            <h1 class="display-3 fw-bold">Ramen Bar</h1>
+            <p class="lead fs-4 mb-5">Japanese Authentic Ramen</p>
+            <div class="d-flex justify-content-center gap-3">
+              <div class="cta-btn-group">
+                <button class="btn btn-green" onclick="scrollToSection('#menu')">Go to Menu</button>
+                <button class="btn btn-orange" onclick="scrollToSection('#reservation')">Book Table</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <!-- Content -->
+    <div class="container text-center position-relative z-index-1">
+        <div style="margin-top: 50px">
+            <!-- Adjust margin to move content down -->
+            <h1 class="display-3 fw-bold">Ramen Bar</h1>
+            <p class="lead fs-4 mb-5">Japanese Authentic Ramen</p>
+            <div class="d-flex justify-content-center gap-3">
+                <div class="cta-btn-group">
+                    <button class="btn btn-green" onclick="scrollToSection('#menu')">Go to Menu</button>
+                    <button class="btn btn-orange" onclick="scrollToSection('#reservation')">Book Table</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation" class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Welcome Message Section -->
+                <div class="col-lg-7">
+                    <div class="booking-content">
+                        <div class="section-header">
+                            <p>Welcome to Ramen Bar</p>
+                        </div>
+                        <div class="about-text">
+                            <h3>Experience the art of authentic Japanese ramen!</h3>
+                            <p>At Ramen Bar, we’re passionate about creating authentic Japanese ramen that brings joy to
+                                every bite. Our dishes are lovingly crafted using the freshest, locally procured
+                                ingredients, ensuring vibrant flavors in every spoonful.</p>
+                            <p>Under the watchful eye of our Japanese ramen master, everything—from our rich broths to
+                                our hand-pulled noodles and perfectly marinated toppings—is handmade with care,
+                                dedication, and a deep respect for tradition.</p>
+                            <p>We’d be delighted to welcome you to experience the magic in person. Whether you’re
+                                craving a comforting classic or looking to explore new seasonal specials, there’s always
+                                a seat waiting for you.</p>
+                            <p>Take a moment to reserve your table now—we can't wait to share our passion for ramen with
+                                you!</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Reservation Form Section -->
+                <div class="col-lg-5">
+                    <div class="bg-white p-4 shadow-sm">
+                        <h3 class="mb-4">Make a Reservation</h3>
+                        <form>
+                            <div class="form-group mb-3">
+                                <input type="text" class="form-control wide-input" placeholder="Name" required>
+                            </div>
+                            <div class="form-group mb-3">
+                                <input type="email" class="form-control wide-input" placeholder="Email" required>
+                            </div>
+                            <div class="form-group mb-3">
+                                <input type="text" class="form-control wide-input" placeholder="Phone" required>
+                            </div>
+                            <div class="form-group mb-3">
+                                <input type="date" class="form-control wide-input" required>
+                            </div>
+                            <div class="form-group mb-3">
+                                <input type="time" class="form-control wide-input" required>
+                            </div>
+                            <div class="form-group mb-4">
+                                <select class="form-control wide-input" required>
+                                    <option value="" disabled selected>Guests</option>
+                                    <option value="1">1 Guest</option>
+                                    <option value="2">2 Guests</option>
+                                    <option value="3">3 Guests</option>
+                                    <option value="4">4 Guests</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-orange w-100">Book Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Ramen Section -->
+    <section id="new" class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Image Section -->
+                <div class="col-lg-5 d-flex align-items-center">
+                    <img src="/img/mussels.jpg" alt="Mussel Ramen" class="img-fluid rounded custom-image">
+                </div>
+                <!-- Description Section -->
+                <div class="col-lg-7">
+                    <div class="special-ramen-content">
+                        <div class="section-header mb-4">
+                            <div class="section-header">
+                                <p>Taste the Season in Every Bowl</p>
+                            </div>
+                            <h2 class="text-dark">Mussels Ramen</h2>
+                        </div>
+                        <p>Our Mussels Ramen is a celebration of seasonal local ingredients and meticulous
+                            craftsmanship, designed to delight and warm the hearts of our community during winter.</p>
+                        <p>This dish features a clear, delicate chicken soup seasoned with fine French salt, offering a
+                            light yet comforting base. Fresh mussels are steamed with white wine and garlic, infusing
+                            the broth with a subtle, aromatic richness. Butter-grilled scallops add a savory depth,
+                            perfectly complementing the mussels.</p>
+                        <p>To complete the dish, we garnish it with fresh rukkora leaves for a touch of bitterness and
+                            vibrant chives on the side, enhancing both flavor and presentation. The result is a bowl of
+                            ramen that is not only warming but also refreshingly light, offering a clean and balanced
+                            taste that leaves you feeling rejuvenated.</p>
+                        <p>A perfect harmony of local flavors and Japanese ramen mastery, Mussels Ramen is our
+                            winter-special offering crafted to bring warmth and joy to your table.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section id="philosophy" class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center" style="min-height: 500px">
+                <!-- Added min-height -->
+                <!-- Why us image -->
+                <div class="col-lg-5 d-flex align-items-center">
+                    <img src="/img/noodle-chef.jpg" alt="Ramen Master" class="img-fluid rounded custom-image">
+                </div>
+                <!-- Why us content -->
+                <div class="col-lg-7 d-flex align-items-center">
+                    <div class="philosophy-content">
+                        <div class="section-header">
+                            <p>Craftsmanship, Quality, and Care</p>
+                        </div>
+                        <div class="section-header mb-4">
+                            <h3>Why Choose Us</h3>
+                        </div>
+                        <div class="about-text">
+                            <p>At Ramen Bar, we believe every bowl tells a story—crafted with authenticity, care, and a
+                                commitment to excellence. Our dedication to quality is rooted in three pillars:</p>
+                            <ul>
+                                <li>
+                                    <strong>Handmade Perfection:</strong>From fresh noodles to savory broths, everything
+                                    is prepared with precision and love.</li>
+                                <li>
+                                    <strong>Mastery of a Japanese Chef:</strong>Our ramen master brings years of
+                                    experience and tradition straight from Japan to your table.</li>
+                                <li>
+                                    <strong>Locally Sourced Ingredients:</strong>We partner with local farmers to ensure
+                                    every dish is as fresh and sustainable as it is flavorful.</li>
+                            </ul>
+                            <div class="d-flex justify-content-end">
+                                <button class="btn btn-success mt-3" id="learnMoreButton">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-4">
+                <div class="section-header">
+                    <p>A Symphony of Flavors</p>
+                </div>
+                <h2>Food Menu</h2>
+            </div>
+            <div class="menu-tab">
+                <!-- Menu Category Buttons -->
+                <div class="d-flex justify-content-center gap-3 mb-4">
+                    <button class="btn menu-btn active" data-target="#all">All</button>
+                    <button class="btn menu-btn active" data-target="#ramens">Ramen</button>
+                    <button class="btn menu-btn" data-target="#starters">Starters</button>
+                    <button class="btn menu-btn" data-target="#appetizers">Appetizers</button>
+                </div>
+                <!-- Menu Content -->
+                <div id="menu-content">
+                    <!-- Ramen Menu -->
+                    <div id="ramens" class="menu-category">
+                        <div class="menu-item d-flex align-items-center mb-4">
+                            <img src="img/curry.jpg" alt="Curry Ramen" class="menu-img">
+                            <div class="menu-details flex-grow-1">
+                                <div class="menu-title-container">
+                                    <h4 class="menu-title">Curry Ramen</h4>
+                                    <span class="menu-price">€14.00</span>
+                                </div>
+                                <p class="menu-desc">Steamed with white wine, garlic, and herbs.</p>
+                            </div>
+                        </div>
+                        <div class="menu-item d-flex align-items-center mb-4">
+                            <img src="img/miso.jpg" alt="Miso Ramen" class="menu-img">
+                            <div class="menu-details flex-grow-1">
+                                <div class="menu-title-container">
+                                    <h4 class="menu-title">Miso Ramen</h4>
+                                    <span class="menu-price">€13.00</span>
+                                </div>
+                                <p class="menu-desc">A rich and hearty soybean-based soup.</p>
+                            </div>
+                        </div>
+                        <div class="menu-item d-flex align-items-center mb-4">
+                            <img src="img/shoyu.jpg" alt="Shoyu Ramen" class="menu-img">
+                            <div class="menu-details flex-grow-1">
+                                <div class="menu-title-container">
+                                    <h4 class="menu-title">Shoyu Ramen</h4>
+                                    <span class="menu-price">€12.00</span>
+                                </div>
+                                <p class="menu-desc">A soy sauce-based broth with a savory kick.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="menu-content">
+                    <!-- Starter Menu -->
+                    <div id="starters" class="menu-category">
+                        <div class="menu-item d-flex align-items-center mb-4">
+                            <img src="img/edamame.png" alt="Edamame" class="menu-img">
+                            <div class="menu-details flex-grow-1">
+                                <div class="menu-title-container">
+                                    <h4 class="menu-title">Edamame</h4>
+                                    <span class="menu-price">€5.00</span>
+                                </div>
+                                <p class="menu-desc">Steamed with white wine, garlic, and herbs.</p>
+                            </div>
+                        </div>
+                        <div class="menu-item d-flex align-items-center mb-4">
+                            <img src="img/edamame.png" alt="Edamame" class="menu-img">
+                            <div class="menu-details flex-grow-1">
+                                <div class="menu-title-container">
+                                    <h4 class="menu-title">Edamame</h4>
+                                    <span class="menu-price">€5.00</span>
+                                </div>
+                                <p class="menu-desc">Steamed with white wine, garlic, and herbs.</p>
+                            </div>
+                        </div>
+                        <div class="menu-item d-flex align-items-center mb-4">
+                            <img src="img/edamame.png" alt="Edamame" class="menu-img">
+                            <div class="menu-details flex-grow-1">
+                                <div class="menu-title-container">
+                                    <h4 class="menu-title">Edamame</h4>
+                                    <span class="menu-price">€5.00</span>
+                                </div>
+                                <p class="menu-desc">Steamed with white wine, garlic, and herbs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="menu-content">
+                    <!-- Appetizers Menu -->
+                    <div id="appetizers" class="menu-category">
+                        <div class="menu-item d-flex align-items-center mb-4">
+                            <img src="img/gyoza.jpg" alt="Gyoza" class="menu-img">
+                            <div class="menu-details flex-grow-1">
+                                <div class="menu-title-container">
+                                    <h4 class="menu-title">Gyoza</h4>
+                                    <span class="menu-price">€9.00</span>
+                                </div>
+                                <p class="menu-desc">Steamed with white wine, garlic, and herbs.</p>
+                            </div>
+                        </div>
+                        <div class="menu-item d-flex align-items-center mb-4">
+                            <img src="img/gyoza.jpg" alt="Gyoza" class="menu-img">
+                            <div class="menu-details flex-grow-1">
+                                <div class="menu-title-container">
+                                    <h4 class="menu-title">Gyoza</h4>
+                                    <span class="menu-price">€9.00</span>
+                                </div>
+                                <p class="menu-desc">Steamed with white wine, garlic, and herbs.</p>
+                            </div>
+                        </div>
+                        <div class="menu-item d-flex align-items-center mb-4">
+                            <img src="img/gyoza.jpg" alt="Gyoza" class="menu-img">
+                            <div class="menu-details flex-grow-1">
+                                <div class="menu-title-container">
+                                    <h4 class="menu-title">Gyoza</h4>
+                                    <span class="menu-price">€9.00</span>
+                                </div>
+                                <p class="menu-desc">Steamed with white wine, garlic, and herbs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center">
+                <p>We’d Love to Hear From You</p>
+            </div>
+            <h2 class="text-center mb-4">Contact Us</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <iframe src="https://www.google.com/maps/embed" width="100%" height="300" style="border: 0"
+                        allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+                <div class="col-md-6">
+                    <form>
+                        <div class="form-group mb-3">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <textarea class="form-control" rows="5" placeholder="Your Message" required>
+                </textarea>
+                        </div>
+                        <div class="form-group text-end">
+                            <button type="submit" class="btn btn-warning px-4">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center">
+                <p>The Stories Behind the Bowls</p>
+            </div>
+            <h2 class="text-center text-dark mb-4">Our Blogs</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-img-top" style="
+                  background: url('./img/chefs.jpg') center / cover;
+                  height: 200px;
+                ">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title fw-bold">Japanese Expertise</h3>
+                            <p>Our founder, Chef Sato, brings years of experience as a sushi chef from Nobu Tokyo. Enjoy
+                                authentic Japanese cuisine.</p>
+                            <a href="/philosophy/japanese-chef" class="btn btn-warning">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-img-top" style="
+                  background: url('./img/local2.jpg') center / cover;
+                  height: 200px;
+                ">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title fw-bold">Locally Sourced Ingredients</h3>
+                            <p>We work with local farmers to ensure sustainability and seasonal flavors.</p>
+                            <a href="/philosophy/local-ingredients" class="btn btn-warning">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-img-top" style="
+                  background: url('./img/noodles.jpg') center / cover;
+                  height: 200px;
+                ">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title fw-bold">Handmade with Care</h3>
+                            <p>Every dish is crafted with love, from noodles to house-marinated chashu.</p>
+                            <a href="/philosophy/handcrafted" class="btn btn-warning">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+
 {% endblock %}
