@@ -1,19 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Make a Reservation</title>
-</head>
-<body>
-    <h1>Make a Reservation</h1>
+<!-- reservation.html -->
+{% extends 'base.html' %}
 
-    <form method="post">
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-container">Make a Reservation</h2>
+    <form id="reservationForm" method="post" action="">
         {% csrf_token %}
 
-        {{ form.as_p }}
-        
-        <button type="submit">Submit Reservation</button>
+        <div class="mb-3">
+            {{ form.name.label_tag }}
+            {{ form.name }}
+        </div>
+        <div class="mb-3">
+            {{ form.email.label_tag }}
+            {{ form.email }}
+        </div>
+        <div class="mb-3">
+            {{ form.phone.label_tag }}
+            {{ form.phone }}
+        </div>
+        <div class="mb-3">
+            {{ form.reservation_date.label_tag }}
+            {{ form.reservation_date }}
+        </div>
+        <div class="mb-3">
+            <label for="reservation_time">Reservation Time:</label>
+            <input type="time" id="reservation_time" name="reservation_time" class="form-control"
+                   step="900" min="12:00" max="21:00" required>
+        </div>
+        <div class="mb-3">
+            {{ form.guests.label_tag }}
+            {{ form.guests }}
+        </div>
+        <div class="mb-3">
+            {{ form.special_request.label_tag }}
+            {{ form.special_request }}
+        </div>
+
+        <button type="submit" class="btn btn-danger">Book Now</button>
     </form>
-</body>
-</html>
+</div>
+
+{% endblock %}

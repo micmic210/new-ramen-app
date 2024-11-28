@@ -29,12 +29,13 @@ class Reservation(models.Model):
         ('pending', 'Pending'),
     ]
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="reservations")
+    name = models.CharField(max_length=100, null=False, default="Jon Doe", blank=False)
     email = models.EmailField(blank=True, null=True)
+    phone = models.CharField(max_length=20, null=False, default="0000-0000-0000", blank=False)
     table = models.ForeignKey(Table, on_delete=models.CASCADE, related_name="reservations", default=1)  
     reservation_date = models.DateField(null=False)
     reservation_time = models.TimeField(null=False)
-    num_people = models.PositiveIntegerField(null=False)
+    guests = models.PositiveIntegerField(null=False)
     status = models.CharField(max_length=50, choices=STATUS_CHOICES, default='confirmed')
     created_at = models.DateTimeField(auto_now_add=True)
     special_request = models.TextField(blank=True, null=True)

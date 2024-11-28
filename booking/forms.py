@@ -1,20 +1,31 @@
 from django import forms
 from .models import Reservation, Table
 from django.contrib.auth import get_user_model
+import datetime
 
 User = get_user_model()
 
 class ReservationForm(forms.ModelForm):
     class Meta:
         model = Reservation
-        fields = ['reservation_date', 'reservation_time', 'num_people', 'special_request', 'table']
-
-    reservation_date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}), label="Reservation Date")
-    reservation_time = forms.TimeField(widget=forms.TimeInput(attrs={'type': 'time'}), label="Reservation Time")
-    special_request = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Any special requests (e.g. allergies, children, etc.)'}), required=False, label="Special Requests")
-    num_people = forms.IntegerField(min_value=1, label="Number of People")
-    table = forms.ModelChoiceField(queryset=Table.objects.all(), label="Select Table")
+        fields = ['name', 'email', 'phone', 'reservation_date', 'reservation_time', 'guests', 'special_request']
+        widgets = {
     
+            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your full name'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Enter your email address'}),
+            'phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your phone number'}),
+            'reservation_date': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
+            'reservation_time': forms.TimeInput(attrs={'class': 'form-control', 'type': 'time'}),
+            'guests': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Guests'}),
+            'special_request': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Any special requests (optional)', 'rows': 3}),
+        }
+    
+    def clean_reservation_time(self):
+        reservation_time = self.cleaned_data['reservation_time']
+        if reservation_time < datetime.time(12, 0) or reservation_time > datetime.time(21, 0):
+            raise forms.ValidationError("Please select a time between 12:00 and 21:00.")
+        return reservation_time
+
 
     def save(self, commit=True):
         reservation = super().save(commit=False)
