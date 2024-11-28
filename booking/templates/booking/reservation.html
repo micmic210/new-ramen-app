@@ -18,10 +18,10 @@ Reservation - Ramen Bar
 </section>
 
 <!-- Reservation Form Section -->
-<section id="reservationForm" class="py-5 bg-light">
+<section id="reservationForm" class="d-flex align-items-center justify-content-center bg-light">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 mx-auto">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
                 <h2 class="text-center mb-4">Reserve Your Table</h2>
                 <form method="post" action="">
                     {% csrf_token %}
@@ -54,8 +54,7 @@ Reservation - Ramen Bar
                         {{ form.special_request.label_tag }}
                         {{ form.special_request }}
                     </div>
-
-                    <button type="submit" class="btn btn-danger">Book Now</button>
+                    <button type="submit" class="btn btn-danger w-100">Book Now</button>
                 </form>
             </div>
         </div>

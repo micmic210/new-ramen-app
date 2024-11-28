@@ -30,7 +30,7 @@
     <title>{% block title %}Ramen Bar{% endblock %}</title>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
@@ -45,34 +45,37 @@
     <!-- Header -->
     <header class="navbar navbar-expand-lg bg-white fixed-top">
         <div class="container">
-            <a class="navbar-brand d-none d-md-block" href="#home">
+            <!-- Brand Logo -->
+            <a class="navbar-brand" href="#home">
                 <img src="{% static 'img/ramen-logo.png' %}" alt="Ramen Logo" width="80">
             </a>
+            <!-- Toggle Button -->
             <a class="navbar-brand d-block d-md-none" href="#home">
                 <span class="fw-bold text-dark">Ramen Bar</span>
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <nav class="collapse navbar-collapse" id="navbarNav">
+            <!-- Navigation Menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="philosophy.html">Philosophy</a>
+                        <a class="nav-link" href="{% url 'philosophy' %}">Philosophy</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="menu.html">Menu</a>
+                        <a class="nav-link" href="{% url 'menu' %}">Menu</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="reservation.html">Reservation</a>
+                        <a class="nav-link" href="{% url 'reservation' %}">Reservation</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
+                        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
                     </li>
                 </ul>
-            </nav>
+            </div>
         </div>
     </header>
 
@@ -174,9 +177,10 @@
     </footer>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
     </script>
+
     {% block scripts %}
     {% endblock %}
 
