@@ -3,7 +3,7 @@
 
 {% load static %}
 
-{% block content %}
+{% block title %}
 Reservation - Ramen Bar
 {% endblock %}
 
@@ -19,46 +19,46 @@ Reservation - Ramen Bar
 
 <!-- Reservation Form Section -->
 <section id="reservationForm" class="py-5 bg-light">
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 mx-auto">
-    <h2 class="text-container">Reserve Your Tanle</h2>
-    <form method="post" action="">
-        {% csrf_token %}
-        <div class="mb-3">
-            {{ form.name.label_tag }}
-            {{ form.name }}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="text-center mb-4">Reserve Your Table</h2>
+                <form method="post" action="">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        {{ form.name.label_tag }}
+                        {{ form.name }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form.email.label_tag }}
+                        {{ form.email }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form.phone.label_tag }}
+                        {{ form.phone }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form.reservation_date.label_tag }}
+                        {{ form.reservation_date }}
+                    </div>
+                    <div class="mb-3">
+                        <label for="reservation_time">Reservation Time:</label>
+                        <input type="time" id="reservation_time" name="reservation_time" class="form-control" step="900"
+                            min="12:00" max="21:00" required>
+                    </div>
+                    <div class="mb-3">
+                        {{ form.guests.label_tag }}
+                        {{ form.guests }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form.special_request.label_tag }}
+                        {{ form.special_request }}
+                    </div>
+
+                    <button type="submit" class="btn btn-danger">Book Now</button>
+                </form>
+            </div>
         </div>
-        <div class="mb-3">
-            {{ form.email.label_tag }}
-            {{ form.email }}
-        </div>
-        <div class="mb-3">
-            {{ form.phone.label_tag }}
-            {{ form.phone }}
-        </div>
-        <div class="mb-3">
-            {{ form.reservation_date.label_tag }}
-            {{ form.reservation_date }}
-        </div>
-        <div class="mb-3">
-            <label for="reservation_time">Reservation Time:</label>
-            <input type="time" id="reservation_time" name="reservation_time" class="form-control"
-                   step="900" min="12:00" max="21:00" required>
-        </div>
-        <div class="mb-3">
-            {{ form.guests.label_tag }}
-            {{ form.guests }}
-        </div>
-        <div class="mb-3">
-            {{ form.special_request.label_tag }}
-            {{ form.special_request }}
-        </div>
-   
-        <button type="submit" class="btn btn-danger">Book Now</button>
-    </form>
-</div>
-</div>
-</div>
-</section> 
+    </div>
+</section>
 {% endblock %}
