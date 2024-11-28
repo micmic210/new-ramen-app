@@ -8,154 +8,160 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Ramen Bar{% endblock %}</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <!-- Fontawesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        type="text/css" />
 </head>
 
-<body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="80" tabindex="0">
+<body data-spy="scroll" data-target="#navbarNav" data-offset="80" tabindex="0"></body>
 
-    <main>
-        <!-- Header -->
-        <header class="navbar navbar-expand-lg bg-white fixed-top">
-            <div class="container">
-                <a class="navbar-brand d-none d-md-block" href="#home">
-                    <img src="{% static 'img/ramen-logo.png' %}" alt="Ramen Logo" width="80">
-                </a>
-                <a class="navbar-brand d-block d-md-none" href="#home">
-                    <span class="fw-bold text-dark">Ramen Bar</span>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon">
-                    </span>
-                </button>
-                <nav class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
+<main>
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-none d-md-block" href="#home">
+                <img src="{% static 'img/ramen-logo.png' %}" alt="Ramen Logo" width="80">
+            </a>
+            <a class="navbar-brand d-block d-md-none" href="#home">
+                <span class="fw-bold text-dark">Ramen Bar</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <nav class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="philosophy.html">Philosophy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="reservation.html">Reservation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Common Header -->
+    <section id="common-header" class="d-flex align-items-center justify-content-center position-relative"
+        style="background: url('{% static 'img/header-image.webp' %}') center / cover; height: 100vh;">
+        <!-- Dark Overlay -->
+        <div class="position-absolute top-0 start-0 w-100" style="height: 100vh; background-color: rgba(0, 0, 0, 0.5);">
+        </div>
+    </section>
+
+    <div class="container mt-5">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</main>
+<!-- Footer -->
+<footer class="ftco-footer ftco-no-pb ftco-section bg-dark text-white py-5">
+    <div class="container">
+        <div class="row text-center text-md-start align-items-start">
+            <!-- Ramen Bar Section -->
+            <div class="col-md-4 mb-4">
+                <div class="ftco-footer-widget">
+                    <h2 class="f-logo ftco-heading-2">Ramen Bar</h2>
+                    <p>Templergraben 55
+                        <br>52062 Aachen</p>
+                    <p>Phone: 01-2345-6789
+                        <br>Email: info@ramen-bar.com</p>
+                    <div class="social-icons d-flex justify-content-center gap-3 mt-3">
+                        <a href="https://www.facebook.com/" target="_blank" class="text-white">
+                            <i class="fa-brands fa-facebook fa-lg"></i>
+                        </a>
+                        <a href="https://www.twitter.com/" target="_blank" class="text-white">
+                            <i class="fa-brands fa-twitter fa-lg"></i>
+                        </a>
+                        <a href="https://www.youtube.com/" target="_blank" class="text-white">
+                            <i class="fa-brands fa-youtube fa-lg"></i>
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank" class="text-white">
+                            <i class="fa-brands fa-instagram fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Open Hours Section -->
+            <div class="col-md-4 mb-4">
+                <div class="ftco-footer-widget">
+                    <h2 class="ftco-heading-2 text-center">Open Hours</h2>
+                    <ul class="list-unstyled text-center mt-3">
+                        <li>
+                            <span>Monday:</span>
+                            <span>12:00-15:00, 17:00-22:00</span>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="philosophy.html">Philosophy</a>
+                        <li>
+                            <span>Tuesday:</span>
+                            <span>12:00-15:00, 17:00-22:00</span>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="menu.html">Menu</a>
+                        <li>
+                            <span>Wednesday:</span>
+                            <span>12:00-15:00, 17:00-22:00</span>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="reservation.html">Reservation</a>
+                        <li>
+                            <span>Thursday:</span>
+                            <span>12:00-15:00, 17:00-22:00</span>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
+                        <li>
+                            <span>Friday:</span>
+                            <span>12:00-15:00, 17:00-22:00</span>
+                        </li>
+                        <li>
+                            <span>Saturday:</span>
+                            <span>12:00-15:00, 17:00-22:00</span>
+                        </li>
+                        <li>
+                            <span>Sunday:</span>
+                            <span>12:00-23:00</span>
                         </li>
                     </ul>
-                </nav>
+                </div>
             </div>
-        </header>
-        <!-- Common Header -->
-        <section id="common-header" class="d-flex align-items-center justify-content-center"
-            style="height: 50vh; background: url('{% static 'img/header-image.webp' %}') center / cover;">
-            <div class="position-absolute top-0 start-0 w-100"
-                style="height: 50vh; background-color: rgba(0, 0, 0, 0.5);"></div>
-        </section>
-
-        <div class="container mt-5">
-            {% block content %}
-            {% endblock %}
-        </div>
-
-    </main>
-    <!-- Footer -->
-    <footer class="ftco-footer ftco-no-pb ftco-section bg-dark text-white py-5">
-        <div class="container">
-            <div class="row text-center text-md-start align-items-start">
-                <!-- Ramen Bar Section -->
-                <div class="col-md-4 mb-4">
-                    <div class="ftco-footer-widget">
-                        <h2 class="f-logo ftco-heading-2">Ramen Bar</h2>
-                        <p>Templergraben 55
-                            <br>52062 Aachen</p>
-                        <p>Phone: 01-2345-6789
-                            <br>Email: info@ramen-bar.com</p>
-                        <div class="social-icons d-flex justify-content-center gap-3 mt-3">
-                            <a href="https://www.facebook.com/" target="_blank" class="text-white">
-                                <i class="fa-brands fa-facebook fa-lg"></i>
-                            </a>
-                            <a href="https://www.twitter.com/" target="_blank" class="text-white">
-                                <i class="fa-brands fa-twitter fa-lg"></i>
-                            </a>
-                            <a href="https://www.youtube.com/" target="_blank" class="text-white">
-                                <i class="fa-brands fa-youtube fa-lg"></i>
-                            </a>
-                            <a href="https://www.instagram.com/" target="_blank" class="text-white">
-                                <i class="fa-brands fa-instagram fa-lg"></i>
-                            </a>
+            <!-- Newsletter Section -->
+            <div class="col-md-4 mb-4">
+                <div class="ftco-footer-widget text-center">
+                    <h2 class="ftco-heading-2">Newsletter</h2>
+                    <p>Subscribe to our newsletter to be the first to hear about new menu items, seasonal specials,
+                        and exclusive discounts!</p>
+                    <form id="newsletterForm" class="subscribe-form mt-3">
+                        <div class="form-group d-flex justify-content-center">
+                            <input type="email" id="emailInput" class="form-control text-center me-2"
+                                placeholder="Enter your email" required>
+                            <button type="submit" id="subscribeButton" class="btn btn-orange">Subscribe</button>
                         </div>
-                    </div>
-                </div>
-                <!-- Open Hours Section -->
-                <div class="col-md-4 mb-4">
-                    <div class="ftco-footer-widget">
-                        <h2 class="ftco-heading-2 text-center">Open Hours</h2>
-                        <ul class="list-unstyled text-center mt-3">
-                            <li>
-                                <span>Monday:</span>
-                                <span>12:00-15:00, 17:00-22:00</span>
-                            </li>
-                            <li>
-                                <span>Tuesday:</span>
-                                <span>12:00-15:00, 17:00-22:00</span>
-                            </li>
-                            <li>
-                                <span>Wednesday:</span>
-                                <span>12:00-15:00, 17:00-22:00</span>
-                            </li>
-                            <li>
-                                <span>Thursday:</span>
-                                <span>12:00-15:00, 17:00-22:00</span>
-                            </li>
-                            <li>
-                                <span>Friday:</span>
-                                <span>12:00-15:00, 17:00-22:00</span>
-                            </li>
-                            <li>
-                                <span>Saturday:</span>
-                                <span>12:00-15:00, 17:00-22:00</span>
-                            </li>
-                            <li>
-                                <span>Sunday:</span>
-                                <span>12:00-23:00</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Newsletter Section -->
-                <div class="col-md-4 mb-4">
-                    <div class="ftco-footer-widget text-center">
-                        <h2 class="ftco-heading-2">Newsletter</h2>
-                        <p>Subscribe to our newsletter to be the first to hear about new menu items, seasonal specials,
-                            and exclusive discounts!</p>
-                        <form id="newsletterForm" class="subscribe-form mt-3">
-                            <div class="form-group d-flex justify-content-center">
-                                <input type="email" id="emailInput" class="form-control text-center me-2"
-                                    placeholder="Enter your email" required>
-                                <button type="submit" id="subscribeButton" class="btn btn-orange">Subscribe</button>
-                            </div>
-                        </form>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
-        <div class="container-fluid py-3">
-            <div class="text-center text-white">
-                <p class="mb-0">Copyright ©
-                    <script>
-                        document.write(new Date().getFullYear());
-                    </script> Ramen Bar. All rights reserved.</p>
-            </div>
+    </div>
+    <div class="container-fluid py-3">
+        <div class="text-center text-white">
+            <p class="mb-0">Copyright ©
+                <script>
+                    document.write(new Date().getFullYear());
+                </script> Ramen Bar. All rights reserved.</p>
         </div>
-    </footer>
+    </div>
+</footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    {% block scripts %}
-    {% endblock %}
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
+</script>
+{% block scripts %}
+{% endblock %}
 
 </body>
 
