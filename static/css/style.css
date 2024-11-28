@@ -31,7 +31,7 @@
   
   /* Headings (Keep Berkshire Swash) */
   h1 {
-    font-family: "Berkshire Swash", serif;
+    font-family: "Berkshire Swash", cursive !important;
     color: white;
     /* Darker color for titles */
     margin-bottom: 1rem;
@@ -199,13 +199,6 @@ header {
     align-items: center; 
     color: white; 
     text-align: center; 
-}
-
-.custom-image {
-  max-height: 100%;
-  object-fit: cover;
-  width: 100%;
-  border-radius: 10px;
 }
 
 .special-ramen-content h2,
