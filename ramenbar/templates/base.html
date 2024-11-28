@@ -1,9 +1,8 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Ramen Bar{% endblock %}</title>
@@ -15,9 +14,7 @@
         type="text/css" />
 </head>
 
-<body data-spy="scroll" data-target="#navbarNav" data-offset="80" tabindex="0"></body>
-
-<main>
+<body>
     <!-- Header -->
     <header class="navbar navbar-expand-lg bg-white fixed-top">
         <div class="container">
@@ -51,20 +48,13 @@
             </nav>
         </div>
     </header>
-    <!-- Common Header -->
-    <section id="common-header" class="d-flex align-items-center justify-content-center position-relative"
-        style="background: url('{% static 'img/header-image.webp' %}') center / cover; height: 100vh;">
-        <!-- Dark Overlay -->
-        <div class="position-absolute top-0 start-0 w-100" style="height: 100vh; background-color: rgba(0, 0, 0, 0.5);">
-        </div>
-    </section>
 
-    <div class="container mt-5">
+    <main>
         {% block content %}
         {% endblock %}
-    </div>
+    </main>
 
-</main>
+
 <!-- Footer -->
 <footer class="ftco-footer ftco-no-pb ftco-section bg-dark text-white py-5">
     <div class="container">
