@@ -45,7 +45,7 @@ class Reservation(models.Model):
     def save(self, *args, **kwargs):
         if not self.reservation_number:
             self.reservation_number = ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
-            super().save(*args, **kwargs)
+        super().save(*args, **kwargs)
 
 
     def __str__(self):
@@ -80,14 +80,6 @@ class Menu(models.Model):
     def __str__(self):
         return self.name
 
-# Contact Message
-class ContactMessage(models.Model):
-    name = models.CharField(max_length=100, null=False)
-    email = models.EmailField(max_length=100, null=False)
-    message = models.TextField(null=False)
-    created_at = models.DateTimeField(auto_now_add=True)
 
-    def __str__(self):
-        return f"Message from {self.name} ({self.email})"
 
 

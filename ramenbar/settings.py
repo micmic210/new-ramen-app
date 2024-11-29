@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'booking',
+    'contact',
 ]
 
 AUTH_USER_MODEL = 'booking.User'

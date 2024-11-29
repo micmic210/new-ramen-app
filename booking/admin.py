@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Admin, Menu, ContactMessage, Table, Reservation
+from .models import Admin, Menu, Table, Reservation
 
 
 class ReservationAdmin(admin.ModelAdmin):
@@ -14,6 +14,5 @@ class ReservationAdmin(admin.ModelAdmin):
 
 admin.site.register(Admin)
 admin.site.register(Menu)
-admin.site.register(ContactMessage)
 admin.site.register(Table)
 admin.site.register(Reservation, ReservationAdmin)
