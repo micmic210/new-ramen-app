@@ -29,6 +29,32 @@ button,
   display: inline-block;
 }
 
+.btn-warning {
+  background-color: #ffc107;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+  color: #fff;
+}
+
+.social-icons a {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ffc107;
+}
+
 /* Headings (Keep Berkshire Swash) */
 h1 {
   font-family: "Berkshire Swash", cursive !important;
@@ -82,7 +108,7 @@ header {
 /* === Welcome Section === */
 #welcome-centered {
   background: url('/static/img/welcome.webp') center / cover no-repeat;
-  min-height: 100vh;
+  min-height: 98vh;
   position: relative;
   color: #fff;
   text-align: center;
@@ -90,7 +116,6 @@ header {
   flex-direction: column;
   justify-content: center;
   padding-top: 200px;
-  /* 調整可能 */
 }
 
 #welcome-centered::before {
@@ -109,7 +134,7 @@ header {
   z-index: 2;
 }
 
-#miso-ramen-welcome {
+#welcome-image {
   background: url('/static/img/miso.webp/') center / cover no-repeat;
   min-height: 400px;
   border-radius: 8px;
@@ -163,22 +188,18 @@ header {
 }
 
 /* === Orange Button === */
-.btn-orange,
-.cta-btn.cta-orange {
+.btn-orange {
   background-color: #ff7700;
   color: white;
-  border-color: #ff7700;
-  font-size: 1rem;
+  border: none;
+  font-size: 16px;
   padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
-.btn-orange:hover,
-.cta-btn.cta-orange:hover,
-.btn-orange.active,
-.cta-btn.cta-orange.active {
-  background-color: transparent;
-  color: #ff7700;
-  border-color: #ff7700;
+.btn-orange:hover {
+  background-color: #e86600;
 }
 
 /* === Green Button === */
@@ -201,7 +222,7 @@ header {
 }
 /* === Reservation Form Section */
 #reservationForm {
-  height: 60vh; /* 残りの60%をフォームエリアに */
+  height: 60vh; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -221,28 +242,127 @@ form button {
   font-weight: bold;
 }
 
-/* Footer Adjustments */
+/* === Footer Adjustments === */
 footer {
-  margin-top: auto;
+  background-color: #343a40;
+  color: white;
+  padding: 50px 20px;
 }
 
-/* === Reservation Section === */
-/* #reservation .bg-white {
-  border-radius: 10px;
+footer h2, footer h3 {
+  font-family: "Berkshire Swash", serif;
+  font-size: 24px;
+  color: white;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  text-align: center;
 }
 
-#reservation .form-control {
-  max-width: 500px;
-  width: 100%;
-  margin: 0 auto;
+footer p {
+  font-size: 16px;
+  color: #bbb;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
-#reservation button {
-  max-width: 500px;
-  margin: 0 auto;
-  display: block;
+/* Social Icons */
+footer .social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+footer .social-icons a {
+  font-size: 28px;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+  color: #ff7700; 
+}
+
+/* Open Hours */
+footer .list-unstyled li {
+  color: #bbb;
+  margin-bottom: 5px;
+  text-align: center; 
+  font-size: 16px; 
+}
+
+/* Newsletter Section */
+
+footer .form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+footer .form-group input {
+  max-width: 400px;
+  height: 45px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  padding: 0 10px; 
+}
+
+footer .form-group button {
+  width: auto;
+  height: 45px; 
+  font-size: 16px; 
+  border-radius: 5px;
+  padding: 0 20px; 
+  background-color: #ff7700;
+  color: white;
   font-weight: bold;
-} */
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+footer .form-group button:hover {
+  background-color: #e86600;
+}
+
+/* Equal Width Sections */
+footer .row > div {
+  flex: 1;
+}
+
+/* Additional Enhancements */
+footer .container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+footer .text-center p {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #bbb;
+}
+
+/* Center Align Text for Small Screens */
+@media (max-width: 768px) {
+  footer .form-group {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  footer .social-icons {
+    justify-content: center;
+    margin-top: 20px;
+  }
+  footer h2, footer h3 {
+    text-align: center;
+  }
+}
+/* End Center Align Text for Small Screens */
 
 /* === Special Ramen Section === */
 #new .row {
