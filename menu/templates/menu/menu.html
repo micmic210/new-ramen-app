@@ -9,6 +9,7 @@ Menu - Ramen Bar
 
 {% block content %}
 
+
 <!-- Common Header Section -->
 <section id="common-header" class="d-flex align-items-center justify-content-center position-relative text-white">
     <div class="container text-center position-relative">
@@ -20,117 +21,111 @@ Menu - Ramen Bar
 <!-- Menu Section -->
 <section id="menu" class="py-5 bg-light">
     <div class="container">
-        <div class="section-header text-center mb-4">
-            <div class="section-header">
-                <p>A Symphony of Flavors</p>
-            </div>
-            <h2>Food Menu</h2>
+        <div class="section-header text-center mb-5">
+            <h2 class="font-weight-bold">Food Menu</h2>
         </div>
-        <div class="menu-tab">
-            <!-- Menu Category Buttons -->
-            <div class="d-flex justify-content-center gap-3 mb-4">
-                <button class="btn menu-btn active" data-target="#all">All</button>
-                <button class="btn menu-btn active" data-target="#ramens">Ramen</button>
-                <button class="btn menu-btn" data-target="#starters">Starters</button>
-                <button class="btn menu-btn" data-target="#appetizers">Appetizers</button>
-            </div>
-            <!-- Menu Content -->
-            <div id="menu-content">
-                <!-- Ramen Menu -->
-                <div id="ramens" class="menu-category">
-                    <div class="menu-item d-flex align-items-center mb-4">
-                        <div class="menu-details flex-grow-1">
-                            <div class="menu-title-container">
-                                <h4 class="menu-title">Curry Ramen</h4>
-                                <span class="menu-price">€14.00</span>
-                            </div>
-                            <p class="menu-desc">Steamed with white wine, garlic, and herbs.</p>
-                        </div>
+
+        <!-- Menu Category Buttons -->
+        <div class="d-flex justify-content-center gap-3 mb-4">
+            <button class="btn menu-btn active" data-target="#all">All</button>
+            <button class="btn menu-btn" data-target="#ramens">Ramen</button>
+            <button class="btn menu-btn" data-target="#starters">Starters</button>
+            <button class="btn menu-btn" data-target="#appetizers">Appetizers</button>
+        </div>
+
+        <!-- Menu Content -->
+        <div id="menu-content">
+            <!-- Ramen Menu -->
+            <div id="ramens" class="menu-category">
+                <div class="menu-item">
+                    <div class="menu-img curry"></div>
+                    <div class="menu-details">
+                        <h4 class="menu-title">Curry Ramen</h4>
+                        <p class="menu-desc">Steamed with white wine, garlic, and herbs.</p>
+                        <span class="menu-price">€14.00</span>
                     </div>
-                    <div class="menu-item d-flex align-items-center mb-4">
-                        <div class="menu-details flex-grow-1">
-                            <div class="menu-title-container">
-                                <h4 class="menu-title">Miso Ramen</h4>
-                                <span class="menu-price">€13.00</span>
-                            </div>
-                            <p class="menu-desc">A rich and hearty soybean-based soup.</p>
-                        </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-img miso"></div>
+                    <div class="menu-details">
+                        <h4 class="menu-title">Miso Ramen</h4>
+                        <p class="menu-desc">A rich and hearty soybean-based soup.</p>
+                        <span class="menu-price">€13.00</span>
                     </div>
-                    <div class="menu-item d-flex align-items-center mb-4">
-                        <div class="menu-details flex-grow-1">
-                            <div class="menu-title-container">
-                                <h4 class="menu-title">Shoyu Ramen</h4>
-                                <span class="menu-price">€12.00</span>
-                            </div>
-                            <p class="menu-desc">A soy sauce-based broth with a savory kick.</p>
-                        </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-img shoyu"></div>
+                    <div class="menu-details">
+                        <h4 class="menu-title">Shoyu Ramen</h4>
+                        <p class="menu-desc">A soy sauce-based broth with a savory kick.</p>
+                        <span class="menu-price">€12.00</span>
                     </div>
                 </div>
             </div>
-            <div id="menu-content">
-                <!-- Starter Menu -->
-                <div id="starters" class="menu-category">
-                    <div class="menu-item d-flex align-items-center mb-4">
-                        <div class="menu-details flex-grow-1">
-                            <div class="menu-title-container">
-                                <h4 class="menu-title">Edamame</h4>
-                                <span class="menu-price">€5.00</span>
-                            </div>
-                            <p class="menu-desc">Steamed with white wine, garlic, and herbs.</p>
-                        </div>
+
+            <!-- Starter Menu -->
+            <div id="starters" class="menu-category d-none">
+                <div class="menu-item">
+                    <div class="menu-img edamame"></div>
+                    <div class="menu-details">
+                        <h4 class="menu-title">Edamame</h4>
+                        <p class="menu-desc">Steamed with white wine, garlic, and herbs.</p>
+                        <span class="menu-price">€5.00</span>
                     </div>
-                    <div class="menu-item d-flex align-items-center mb-4">
-                        <div class="menu-details flex-grow-1">
-                            <div class="menu-title-container">
-                                <h4 class="menu-title">Spinach</h4>
-                                <span class="menu-price">€5.00</span>
-                            </div>
-                            <p class="menu-desc">Steamed with white wine, garlic, and herbs.</p>
-                        </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-img spinach"></div>
+                    <div class="menu-details">
+                        <h4 class="menu-title">Spinach</h4>
+                        <p class="menu-desc">Lightly steamed and seasoned with sesame.</p>
+                        <span class="menu-price">€5.00</span>
                     </div>
-                    <div class="menu-item d-flex align-items-center mb-4">
-                        <div class="menu-details flex-grow-1">
-                            <div class="menu-title-container">
-                                <h4 class="menu-title">Salad</h4>
-                                <span class="menu-price">€5.00</span>
-                            </div>
-                            <p class="menu-desc">Steamed with white wine, garlic, and herbs.</p>
-                        </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-img salad"></div>
+                    <div class="menu-details">
+                        <h4 class="menu-title">Salad</h4>
+                        <p class="menu-desc">Fresh seasonal greens with house dressing.</p>
+                        <span class="menu-price">€6.00</span>
                     </div>
                 </div>
             </div>
-            <div id="menu-content">
-                <!-- Appetizers Menu -->
-                <div id="appetizers" class="menu-category">
-                    <div class="menu-item d-flex align-items-center mb-4">
-                        <div class="menu-details flex-grow-1">
-                            <div class="menu-title-container">
-                                <h4 class="menu-title">Gyoza</h4>
-                                <span class="menu-price">€9.00</span>
-                            </div>
-                            <p class="menu-desc">Steamed with white wine, garlic, and herbs.</p>
-                        </div>
+
+            <!-- Appetizers Menu -->
+            <div id="appetizers" class="menu-category d-none">
+                <div class="menu-item">
+                    <div class="menu-img gyoza"></div>
+                    <div class="menu-details">
+                        <h4 class="menu-title">Gyoza</h4>
+                        <p class="menu-desc">Pan-fried dumplings served with dipping sauce.</p>
+                        <span class="menu-price">€9.00</span>
                     </div>
-                    <div class="menu-item d-flex align-items-center mb-4">
-                        <div class="menu-details flex-grow-1">
-                            <div class="menu-title-container">
-                                <h4 class="menu-title">Shrimp</h4>
-                                <span class="menu-price">€9.00</span>
-                            </div>
-                            <p class="menu-desc">Steamed with white wine, garlic, and herbs.</p>
-                        </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-img shrimp"></div>
+                    <div class="menu-details">
+                        <h4 class="menu-title">Shrimp</h4>
+                        <p class="menu-desc">Steamed shrimp with flavorful herbs.</p>
+                        <span class="menu-price">€9.00</span>
                     </div>
-                    <div class="menu-item d-flex align-items-center mb-4">
-                        <div class="menu-details flex-grow-1">
-                            <div class="menu-title-container">
-                                <h4 class="menu-title">Spring Rolles</h4>
-                                <span class="menu-price">€9.00</span>
-                            </div>
-                            <p class="menu-desc">Steamed with white wine, garlic, and herbs.</p>
-                        </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-img spring-rolls"></div>
+                    <div class="menu-details">
+                        <h4 class="menu-title">Spring Rolls</h4>
+                        <p class="menu-desc">Crispy rolls filled with vegetables and shrimp.</p>
+                        <span class="menu-price">€8.00</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+{% endblock %}
