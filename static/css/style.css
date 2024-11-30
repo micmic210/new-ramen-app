@@ -273,11 +273,12 @@ form .form-control {
   border-radius: 5px;
 }
 
-form button, #reservationForm .btn {
+#reservationForm .btn {
   font-size: 18px;
   padding: 10px;
   border-radius: 5px;
   font-weight: bold;
+  text-transform: uppercase;
   margin-top: 20px;
 }
 
@@ -288,6 +289,95 @@ form button, #reservationForm .btn {
       max-width: 100%;
   }
 }
+
+/* === Contact Form Section === */
+#contactForm {
+  background-color: #f8f9fa;
+  padding: 10px 0;
+}
+
+#contactForm .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#contactForm form {
+  background: white;
+  padding: 20px; 
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#contactForm .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+#contactForm .col-md-6 {
+  flex: 0 0 48%; 
+  max-width: 48%;
+}
+
+#contactForm .col-md-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+#contactForm .form-group {
+  margin-bottom: 15px;
+}
+
+form .form-control,
+form textarea {
+  box-sizing: border-box;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+form textarea {
+  height: auto; 
+  min-height: 100px; 
+  max-height: 200px; 
+  resize: vertical; 
+}
+
+#contactForm .btn {
+  font-size: 18px; 
+  padding: 10px; 
+  border-radius: 5px; 
+  font-weight: bold; 
+  text-transform: uppercase; 
+  margin-top: 20px; 
+  display: block; 
+  width: 100%; 
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#contactForm .btn:hover {
+  background-color: #bd2130;
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  #contactForm .col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  #contactForm .btn {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+/* === End of Contact */
 
 /* === Footer Adjustments === */
 footer {
