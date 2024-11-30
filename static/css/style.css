@@ -379,8 +379,26 @@ form textarea {
 }
 /* === End of Contact */
 
+/* === Thank_you Page */
+#thankYouSection {
+  min-height: calc(100vh - 60vh - 30px); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 120px;
+}
+
+#thankYouSection .lead {
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* End of Thank_you Page */
+
 /* === Footer Adjustments === */
 footer {
+  /* margin-top: auto; */
   background-color: #343a40;
   color: white;
   padding: 50px 20px;
