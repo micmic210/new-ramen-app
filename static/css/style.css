@@ -5,7 +5,7 @@
   padding: 0;
 }
 
-/* General Body Text Settings */
+/* === General Body Text Settings === */
 body {
   font-family: "Open Sans", sans-serif;
   font-size: 18px;
@@ -55,11 +55,10 @@ button,
   color: #ffc107;
 }
 
-/* Headings (Keep Berkshire Swash) */
+/* === Headings (Keep Berkshire Swash) === */
 h1 {
   font-family: "Berkshire Swash", cursive !important;
   color: white;
-  /* Darker color for titles */
   margin-bottom: 1rem;
 }
 
@@ -70,13 +69,11 @@ h5,
 h6 {
   font-family: "Berkshire Swash", serif;
   color: #333;
-  /* Darker color for titles */
   margin-bottom: 1rem;
 }
 
 section {
   scroll-margin-top: 80px;
-  /* Offset for fixed navbar */
 }
 
 /* === Header === */
@@ -147,13 +144,10 @@ header {
   text-align: center;
 }
 
-/* Common Header */
+/* === Common Header === */
 #common-header {
   background: url('../img/header-image.webp') center / cover no-repeat;
   height: 60vh;
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
   position: relative;
   color: white;
   text-align: center;
@@ -184,7 +178,7 @@ header {
   margin-top: 10px;
 }
 
-/* Title Styling */
+/* === Title Styling === */
 #welcome-centered h1 {
   font-size: 5rem;
   font-weight: bold;
@@ -195,7 +189,7 @@ header {
   margin-bottom: 20px;
 }
 
-/* Subtitle Styling */
+/* === Subtitle Styling === */
 #welcome-centered p {
   font-size: 1.5rem;
   margin-top: 20px;
@@ -237,7 +231,7 @@ header {
   border-color: green;
 }
 
-/* === Reservation Form Section */
+/* === Reservation Form Section === */
 #reservationForm {
   background-color: #f8f9fa;
   padding: 10px 0;
@@ -282,7 +276,7 @@ form .form-control {
   margin-top: 20px;
 }
 
-/*　Mobile */
+/*　=== Mobile === */
 @media (max-width: 768px) {
   #reservationForm .col-md-4 {
       flex: 0 0 100%;
@@ -394,7 +388,34 @@ form textarea {
   line-height: 1.6;
 }
 
-/* End of Thank_you Page */
+/* === End of Thank_you Page === */
+
+/* === Philosophy Content Section === */
+#philosophyContent {
+  background-color: #f8f9fa;
+  padding: 40px 0;
+}
+
+#philosophyContent img {
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#philosophyContent h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#philosophyContent p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* === End of Philosophy Content === */
 
 /* === Footer Adjustments === */
 footer {
