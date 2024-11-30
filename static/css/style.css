@@ -149,13 +149,29 @@ header {
 
 /* Common Header */
 #common-header {
-  background: url('static/img/header-image.webp') center / cover no-repeat;
-  height: 40vh;
-  display: flex;
+  background: url('../img/header-image.webp') center / cover no-repeat;
+  height: 60vh;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
+  position: relative;
   color: white;
   text-align: center;
+  margin-bottom: 30px; /* Space between the header image and the content*/
+}
+
+#common-header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 1;
+}
+#common-header .container {
+  position: relative;
+  z-index: 2;
 }
 
 #common-header h1 {
@@ -220,26 +236,57 @@ header {
   color: green;
   border-color: green;
 }
+
 /* === Reservation Form Section */
 #reservationForm {
-  height: 60vh; 
+  background-color: #f8f9fa;
+  padding: 10px 0;
+}
+
+#reservationForm .container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+#reservationForm form {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#reservationForm .row {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
   justify-content: center;
 }
 
-form .form-control {
-  margin-bottom: 15px;
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 16px;
+#reservationForm .col-md-4 {
+  flex: 0 0 calc(33.333% - 15px); 
+  max-width: calc(33.333% - 15px);
 }
 
-form button {
+form .form-control {
+  height: 45px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+form button, #reservationForm .btn {
   font-size: 18px;
   padding: 10px;
   border-radius: 5px;
   font-weight: bold;
+  margin-top: 20px;
+}
+
+/*　Mobile */
+@media (max-width: 768px) {
+  #reservationForm .col-md-4 {
+      flex: 0 0 100%;
+      max-width: 100%;
+  }
 }
 
 /* === Footer Adjustments === */
