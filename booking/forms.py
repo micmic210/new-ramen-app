@@ -8,7 +8,7 @@ User = get_user_model()
 class ReservationForm(forms.ModelForm):
     class Meta:
         model = Reservation
-        fields = ['name', 'email', 'phone', 'reservation_date', 'reservation_time', 'guests', 'special_request']
+        fields = ['name', 'email', 'phone', 'reservation_date', 'reservation_time', 'guests']
         widgets = {
     
             'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your full name'}),
@@ -17,7 +17,6 @@ class ReservationForm(forms.ModelForm):
             'reservation_date': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
             'reservation_time': forms.TimeInput(attrs={'class': 'form-control', 'type': 'time'}),
             'guests': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Guests'}),
-            'special_request': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Any special requests (optional)', 'rows': 3}),
         }
     
     def clean_reservation_time(self):

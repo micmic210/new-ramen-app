@@ -38,7 +38,6 @@ class Reservation(models.Model):
     guests = models.PositiveIntegerField(null=False)
     status = models.CharField(max_length=50, choices=STATUS_CHOICES, default='confirmed')
     created_at = models.DateTimeField(auto_now_add=True)
-    special_request = models.TextField(blank=True, null=True)
 
     reservation_number = models.CharField(max_length=10, unique=True, editable=False)
 
@@ -49,7 +48,7 @@ class Reservation(models.Model):
 
 
     def __str__(self):
-        return f"Reservation {self.id} by {self.user.username} on {self.reservation_date} at {self.reservation_time}"
+        return f"Reservation {self.id} by {self.name} on {self.reservation_date} at {self.reservation_time}"
 
 # Admin Model    
 class Admin(models.Model):
