@@ -638,54 +638,18 @@ footer .text-center p {
 .menu-item {
   display: flex;
   align-items: center;
-  margin-bottom: 1.5rem;
-  padding: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background-size: 100px 100px;
-  background-position: left center;
-  background-repeat: no-repeat;
-  padding-left: 120px;
+  width: 66.66%;
+  margin: 0 auto;
 }
 
-/* Individual Menu */
-.menu-item.curry {
-  background-image: url("{% static 'img/curry.webp' %}");
+.menu-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 5px;
+  object-fit: cover;
+  margin-right: 20px;
 }
 
-.menu-item.miso {
-  background-image: url("{% static 'img/miso.webp' %}");
-}
-
-.menu-item.shoyu {
-  background-image: url("{% static 'img/shoyu.webp' %}");
-}
-
-.menu-item.edamame {
-  background-image: url("{% static 'img/edamame.webp' %}");
-}
-
-.menu-item.spinach {
-  background-image: url("{% static 'img/spinach.webp' %}");
-}
-
-.menu-item.salad {
-  background-image: url("{% static 'img/salad.webp' %}");
-}
-
-.menu-item.gyoza {
-  background-image: url("{% static 'img/gyoza.webp' %}");
-}
-
-.menu-item.shrimp {
-  background-image: url("{% static 'img/shrimp.webp' %}");
-}
-
-.menu-item.spring-rolls {
-  background-image: url("{% static 'img/spring-rolls.webp' %}");
-}
 
 /* Menu Details */
 .menu-details {
