@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from dotenv import load_dotenv
 from pathlib import Path
-from env import SENDGRID_API_KEY 
+from env import SENDGRID_API_KEY, CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, CLOUDINARY_API_SECRET 
 
 # Load environment variables
 load_dotenv()
@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary',  
+    'cloudinary_storage',  
     'booking',
     'menu'
 ]
@@ -126,8 +128,15 @@ EMAIL_HOST_USER = 'apikey'
 EMAIL_HOST_PASSWORD = SENDGRID_API_KEY  
 
 
-# デバッグ用に追加
-print(f"EMAIL_HOST_PASSWORD: {EMAIL_HOST_PASSWORD}")
+# Cloudinary Settings
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': CLOUDINARY_CLOUD_NAME,
+    'API_KEY': CLOUDINARY_API_KEY,
+    'API_SECRET': CLOUDINARY_API_SECRET,
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+MEDIA_URL = '/media/'
 
 
 # Internationalization
